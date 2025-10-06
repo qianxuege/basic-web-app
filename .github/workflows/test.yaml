@@ -1,4 +1,4 @@
-name: __BLANK 1__
+name: CI
 
 on:
 
@@ -10,11 +10,10 @@ branches:
 
 jobs:
 
-__BLANK 2__:
-
+build:
     runs-on: ubuntu-latest
 
-    name: __BLANK 3__
+    name: Lint and Test
 
     steps:
 
@@ -22,6 +21,6 @@ __BLANK 2__:
 
     - uses: bahmutov/npm-install@v1
 
-    - run: npm run __BLANK 4__ (Run ESLint)
+    - run: npm run lint
 
-    - run: __BLANK 5__ (Run Jest)
+    - run: npm run test
