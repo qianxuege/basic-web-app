@@ -19,15 +19,17 @@ export default function QueryProcessor(query: string): string {
     const list = query.toLowerCase().split(" ");
     const plusIndex = list.indexOf("plus");
 
-    const num1 = Number(list[plusIndex - 1]);
-    const num2 = Number(list[plusIndex + 1]);
-    
+    const clean = (str:string) => Number(str.replace(/[^0-9.-]/g, "")); // remove punctuation
+    const num1 = clean(list[plusIndex - 1]);
+    const num2 = clean(list[plusIndex + 1]);
+
     if (!isNaN(num1) && !isNaN(num2)) {
       const res = String(num1 + num2);
       console.log(res);
       return res;
     }
   }
+
 
   if (query.toLowerCase().includes("largest")) {
     // Extract all numbers from the query using regex
