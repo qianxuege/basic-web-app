@@ -18,16 +18,14 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("plus")) {
     const list = query.toLowerCase().split(" ");
     const plusIndex = list.indexOf("plus");
+
+    const num1 = Number(list[plusIndex - 1]);
+    const num2 = Number(list[plusIndex + 1]);
     
-    if (plusIndex > 0 && plusIndex < list.length - 1) {
-      const num1 = Number(list[plusIndex - 1]);
-      const num2 = Number(list[plusIndex + 1]);
-      
-      if (!isNaN(num1) && !isNaN(num2)) {
-        const res = String(num1 + num2);
-        console.log(res);
-        return res;
-      }
+    if (!isNaN(num1) && !isNaN(num2)) {
+      const res = String(num1 + num2);
+      console.log(res);
+      return res;
     }
   }
 
