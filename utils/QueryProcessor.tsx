@@ -21,7 +21,7 @@ export default function QueryProcessor(query: string): string {
     const num1 = Number(list[idx - 1]);
     const num2 = Number(list[idx + 1]);
     if (!isNaN(num1) && !isNaN(num2)) {
-      return String(num1 + num2);
+      return String(Number(num1) + Number(num2));
     }
   }
 
